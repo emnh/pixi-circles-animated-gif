@@ -8,6 +8,15 @@ function drawCircle(graphics, x, y, color) {
   graphics.endFill();
 }
 
+function createGIF(canvasElement) {
+  
+
+  // add a image element
+//   gif.addFrame(imageElement);
+
+  // or a canvas element
+  
+}
 
 function main() {
   const app = new PIXI.Application({
@@ -15,6 +24,15 @@ function main() {
   });
   document.body.appendChild(app.view);
 
+  var gif = new GIF({
+    workers: 2,
+    quality: 10
+  });
+  
+  gif.on('finished', function(blob) {
+    window.open(URL.createObjectURL(blob));
+  });
+  
   const container = new PIXI.Container();
 
   app.stage.addChild(container);
@@ -32,6 +50,7 @@ function main() {
   container.addChild(graphics);
 
   let t = 0.0;
+  let done = false;
   
   // Listen for animate update
   app.ticker.add((delta) => {
@@ -51,7 +70,16 @@ function main() {
         drawCircle(graphics, x, y, color);
       }
     }
+    
+    if (t < 2.0) {
+      gif.addFrame(canvasElement, {delay: 16});
+    } else if (!done) {
+      gif.render();
+      done = true;
+    }
   });
+  
+//   createGIF(app.view);
 }
 
 $(main);
