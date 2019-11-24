@@ -75,10 +75,11 @@ function main() {
       }
     }
     
-    if (t < 2.0) {
+    if (t < 5.0) {
       gif.addFrame(app.view, {delay: 16});
     } else if (!done) {
       gif.render();
+      console.log("Done. Rendering!");
       done = true;
     }
   });
