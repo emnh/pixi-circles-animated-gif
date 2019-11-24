@@ -76,7 +76,7 @@ function main() {
     }
     
     if (t < 2.0) {
-      gif.addFrame(canvasElement, {delay: 16});
+      gif.addFrame(app.view, {delay: 16});
     } else if (!done) {
       gif.render();
       done = true;
