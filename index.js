@@ -19,14 +19,18 @@ function createGIF(canvasElement) {
 }
 
 function main() {
+  const width = 270;
+  const height = 250;
   const app = new PIXI.Application({
-    width: 270, height: 250, backgroundColor: 0x1099bb, resolution: window.devicePixelRatio || 1,
+    width: width, height: height, backgroundColor: 0x1099bb, resolution: window.devicePixelRatio || 1,
   });
   document.body.appendChild(app.view);
 
   var gif = new GIF({
     workers: 2,
-    quality: 10
+    quality: 10,
+    width: width,
+    height: height
   });
   
   gif.on('finished', function(blob) {
