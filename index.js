@@ -55,6 +55,7 @@ function main() {
 
   let t = 0.0;
   let done = false;
+  let frames = 0;
   
   // Listen for animate update
   app.ticker.add((delta) => {
@@ -75,7 +76,8 @@ function main() {
       }
     }
     
-    if (t < 5.0) {
+    frames++;
+    if (frames < 120) {
       gif.addFrame(app.view, {delay: 16});
     } else if (!done) {
       gif.render();
