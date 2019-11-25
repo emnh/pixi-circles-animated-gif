@@ -78,8 +78,9 @@ function main() {
     }
     
     frames++;
-    if (frames < 120) {
+    if (frames < 600) {
       //gif.addFrame(app.view, {delay: 16});
+      console.log("context", ctx);
       gif.addFrame(ctx, {copy: true, delay: 16});
     } else if (!done) {
       gif.render();
