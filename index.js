@@ -56,7 +56,7 @@ function main() {
   let t = 0.0;
   let done = false;
   let frames = 0;
-  const ctx = app.view.getContext('webgl');
+  const ctx = app.view.getContext('webgl2');
   
   // Listen for animate update
   app.ticker.add((delta) => {
