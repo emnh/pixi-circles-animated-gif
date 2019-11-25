@@ -56,6 +56,7 @@ function main() {
   let t = 0.0;
   let done = false;
   let frames = 0;
+  const ctx = app.view.getContext('2d');
   
   // Listen for animate update
   app.ticker.add((delta) => {
@@ -78,7 +79,8 @@ function main() {
     
     frames++;
     if (frames < 120) {
-      gif.addFrame(app.view, {delay: 16});
+      //gif.addFrame(app.view, {delay: 16});
+      gif.addFrame(ctx, {copy: true, delay: 16});
     } else if (!done) {
       gif.render();
       console.log("Done. Rendering!");
