@@ -1,0 +1,26 @@
+{
+  "name": "pixi-circles-animated-gif",
+  "version": "1.0.0",
+  "description": "Some circles with animated colors",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/emnh/pixi-circles-animated-gif.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/emnh/pixi-circles-animated-gif/issues"
+  },
+  "homepage": "https://github.com/emnh/pixi-circles-animated-gif#readme",
+  "dependencies": {
+    "ccapture.js": "^1.1.0",
+    "gl-gif": "^3.1.0",
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.10"
+  }
+}
